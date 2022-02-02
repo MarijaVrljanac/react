@@ -22,23 +22,29 @@ function App() {
   const [products] = useState([
     {
       id: 1,
-      title: "Chocolate",
+      title: "Bombshell",
+      category: "EDP",
+      size: "50 ml",
       description:
-        "Chocolate is a food made from cacao beans. It is used in many desserts like pudding, cakes and candy",
+        "There’s a Bombshell in every woman. The heart of the fragrance blooms with Bombshell’s signature floral, the peony. Madagascan vanilla orchid adds a creamy sweetness.",
       amount: 0,
     },
     {
       id: 2,
-      title: "Lollypop",
+      title: "Vanilla Lace",
+      category: "Mist",
+      size: "250 ml",
       description:
-        "Lollipops are available in a number of colors and flavors, particularly fruit flavors.",
+        "Discover The Mist Collection. Scents that celebrate all that's individual, unique and of the moment. It's a fragrance adventure, and it starts with you.",
       amount: 0,
     },
     {
       id: 3,
-      title: "Ice Cream",
+      title: "Romance",
+      category: "Losion",
+      size: "236 ml",
       description:
-        "Ice cream is a sweetened frozen food typically eaten as a snack or dessert.",
+        "Nourish with scent. Our fast-absorbing, fragrance lotion with 24-Hour Moisture is perfect for hands and body. Smooth on lotion, then finish with Mist for lasting scent.",
       amount: 0,
     },
   ]);

@@ -36,7 +36,9 @@ function Proizvod({product, onAdd, onDelete, inCart}){
       <img className={inCart===1 ? "card-img-top" : "card-img-left"} src="https:/picsum.photos/200" alt="Slika"></img>
       <div className="card-body">
           <h3 className="card-title">{product.title}</h3>
-          <p className="card-text">{product.description}</p>
+          <h6 className="card-text">⟡{product.category}</h6>
+          <h8 className="card-text">{product.size}</h8>
+          <p className="card-text">►{product.description}</p>
       </div>
       {/* <button className="btn" onClick={() => onAdd(product.title)}> */}
       
