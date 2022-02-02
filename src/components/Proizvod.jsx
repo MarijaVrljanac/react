@@ -9,10 +9,10 @@ import {BsPlusLg, BsDashLg} from "react-icons/bs";
 
 
 
-// function OneProduct(props) {
+// function Proizvod(props) {
 
 //DESTRUKTUIRANJE PROPS
-function OneProduct({product, onAdd, inCart}){
+function Proizvod({product, onAdd, inCart}){
 
 
     const stil = { margin: 1 + "em", borderStyle: "dotted" };

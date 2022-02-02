@@ -3,7 +3,7 @@
 import React from "react";
 import Proizvod from "./Proizvod.jsx";
 
-const Products = ({products, onAdd}) => {
+const Proizvodi = ({products, onAdd}) => {
     // const name="Naziv proizvoda";
     // const desc = "Opis proizvoda";
     // const prod = {
@@ -29,18 +29,18 @@ const Products = ({products, onAdd}) => {
     <div className="all-products">
 
         {products.map((prod)=> ( 
-        <OneProduct product={prod} key={prod.id} onAdd={onAdd} inCart={1}/>
+        <Proizvod product={prod} key={prod.id} onAdd={onAdd} inCart={1}/>
         ))}
 
         {/* {products.map((prod)=>{
-            return <OneProduct product={prod}/>;
+            return <Proizvod product={prod}/>;
         })} */}
         
         
 
-      {/* <OneProduct product={products[0]}/>
-      <OneProduct product={products[1]}/>
-      <OneProduct product={products[2]}/> */}
+      {/* <Proizvod product={products[0]}/>
+      <Proizvod product={products[1]}/>
+      <Proizvod product={products[2]}/> */}
       
 
     </div>
