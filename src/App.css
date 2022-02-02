@@ -1,15 +1,28 @@
 .navBar {
   display: flex;
   flex-direction: row;
-  background-color: rgb(211, 211, 211);
+  background-image: linear-gradient(90deg, 
+  rgb(249, 98, 159) 25%,rgb(252, 155, 194) 25%,rgb(252, 155, 194) 50%,  rgb(249, 98, 159) 50%,  rgb(249, 98, 159) 75%, rgb(252, 155, 194) 75%, rgb(252, 155, 194) 100%);
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: rgb(175, 175, 175);
+  border-bottom-color: black;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: black;
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: black;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: black;
+  
   align-items: center;
   min-height: 40px;
   padding-left: 25px;
   font-size: large;
 }
+
+/* BOJE sa sajta: #ff6fb7; #e89188; #b55964 - VSBOJE: #feb6c2; #fededf ;#FFFFFF*/
 
 .cart-items {
   display: flex;
@@ -19,7 +32,7 @@
 }
 
 .cart-num {
-  background-color: grey;
+  background-color: black;
   color: white;
   border-radius: 5px;
   text-align: center;
@@ -52,8 +65,20 @@
   margin: 10px;
 }
 
-.btn {
-  background-color: cornflowerblue;
+.btnAdd {
+  background-color: #f9629f;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 3px;
+  border-radius: 3px;
+  border-width: 0px;
+}
+
+.btnDelete {
+  background-color:  #fc9bc2;
   color: white;
   padding-top: 10px;
   padding-bottom: 5px;

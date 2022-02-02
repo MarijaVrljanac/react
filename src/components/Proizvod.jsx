@@ -29,11 +29,14 @@ function Proizvod({product, onAdd, onDelete, inCart}){
     // }
     // <=>
     // inCart===1 ? console.log("Uradi nesto.") : console.log("Uradi nesto drugo.");
+    // src="https:/picsum.photos/200" alt="Slika"
+
 
 
     return (
     <div className={inCart===1 ? "card" : "card-cart"} style={stil}>
-      <img className={inCart===1 ? "card-img-top" : "card-img-left"} src="https:/picsum.photos/200" alt="Slika"></img>
+      <img className={inCart===1 ? "card-img-top" : "card-img-left"}></img>   
+      
       <div className="card-body">
           <h3 className="card-title">{product.title}</h3>
           <h6 className="card-text">⟡{product.category}</h6>
@@ -44,10 +47,10 @@ function Proizvod({product, onAdd, onDelete, inCart}){
       
       {inCart === 1 ? (
         <>
-          <button className="btn" onClick={() => onAdd(product.title, product.id)}>
+          <button className="btnAdd" onClick={() => onAdd(product.title, product.id)}>
             <BsPlusLg />
           </button>
-          <button className="btn" onClick={() => onDelete(product.title, product.id)}>
+          <button className="btnDelete" onClick={() => onDelete(product.title, product.id)}>
             <BsDashLg />
           </button>
         </>

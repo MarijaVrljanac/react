@@ -18,10 +18,17 @@ function App() {
   const [cartNum, setCartNum] = useState(0);
   const [cartProducts, setCartProducts] = useState([]);
 
+  function img1() { 
+    var img = document.createElement('img'); 
+      img.src = 'https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png'; 
+    document.getElementById('body').appendChild(img);
+  }
+
 
   const [products] = useState([
     {
       id: 1,
+      img1,
       title: "Bombshell",
       category: "EDP",
       size: "50 ml",
@@ -40,7 +47,7 @@ function App() {
     },
     {
       id: 3,
-      title: "Romance",
+      title: "Romantic",
       category: "Losion",
       size: "236 ml",
       description:
