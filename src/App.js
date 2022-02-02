@@ -65,7 +65,19 @@ function addProduct(title, id){
   //     prod.amount++;
   //   }
   // });
+}
 
+function deleteProduct(title, id){
+  console.log("Proizvod: "+title+" je uklonjen iz korpe.");
+  setCartNum(cartNum - 1);
+  // console.log("Broj proizvoda u korpi: "+cartNum);
+  products.forEach((prod) => {
+    if(prod.id === id){
+      prod.amount--;
+    }
+    console.log(prod.amount);
+  });
+  refreshCart();
 }
 
 
@@ -75,7 +87,7 @@ function addProduct(title, id){
         <Routes>
           <Route 
             path="/"
-            element={<Proizvodi products={products} onAdd={addProduct}/>}
+            element={<Proizvodi products={products} onAdd={addProduct} onDelete={deleteProduct}/>}
           />
           <Route 
             path="/cart" // /cart*prihvata sve putanje; konkretna putanja bi bila npr /cart/:id

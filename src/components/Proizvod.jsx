@@ -12,7 +12,7 @@ import {BsPlusLg, BsDashLg} from "react-icons/bs";
 // function Proizvod(props) {
 
 //DESTRUKTUIRANJE PROPS
-function Proizvod({product, onAdd, inCart}){
+function Proizvod({product, onAdd, onDelete, inCart}){
 
 
     const stil = { margin: 1 + "em", borderStyle: "dotted" };
@@ -45,7 +45,7 @@ function Proizvod({product, onAdd, inCart}){
           <button className="btn" onClick={() => onAdd(product.title, product.id)}>
             <BsPlusLg />
           </button>
-          <button className="btn">
+          <button className="btn" onClick={() => onDelete(product.title, product.id)}>
             <BsDashLg />
           </button>
         </>
