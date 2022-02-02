@@ -35,7 +35,9 @@ function Proizvod({product, onAdd, onDelete, inCart}){
 
     return (
     <div className={inCart===1 ? "card" : "card-cart"} style={stil}>
-      <img className={inCart===1 ? "card-img-top" : "card-img-left"}></img>   
+      <img className={inCart===1 ? "card-img-top" : "card-img-left"} 
+      src={product.id===1 ? "slike\bombshell.jpg" : product.id===2 ? "slike\vanilla-lace.jpg" : "slike\romantic.jpg"}>
+        </img>   
       
       <div className="card-body">
           <h3 className="card-title">{product.title}</h3>
