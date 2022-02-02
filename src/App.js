@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from "./components/NavBar";
-import Products from "./components/Products";
+import Proizvodi from "./components/Proizvodi";
 import Cart from "./components/Cart";
 import { useState } from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom"; //Routes je kao switch(), Route je kao case
