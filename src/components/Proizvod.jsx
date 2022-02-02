@@ -33,7 +33,7 @@ function Proizvod({product, onAdd, inCart}){
 
     return (
     <div className={inCart===1 ? "card" : "card-cart"} style={stil}>
-      <img className={inCart===1 ? "card-img-top" : "card-img-left"} src="https:/picsum.photos/200" alt="Neka slika"></img>
+      <img className={inCart===1 ? "card-img-top" : "card-img-left"} src="https:/picsum.photos/200" alt="Slika"></img>
       <div className="card-body">
           <h3 className="card-title">{product.title}</h3>
           <p className="card-text">{product.description}</p>
