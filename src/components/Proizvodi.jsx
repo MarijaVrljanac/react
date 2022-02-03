@@ -42,6 +42,7 @@ const Proizvodi = ({products, onAdd, onDelete}) => {
       <Proizvod product={products[1]}/>
       <Proizvod product={products[2]}/> */}
       
+      
 
     </div>
   );

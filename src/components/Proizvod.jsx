@@ -1,6 +1,6 @@
 import React from "react";
 //stavljamo {} zato sto zelimo tacno tu ikonicu
-import {BsPlusLg, BsDashLg} from "react-icons/bs";
+import {BsPlusLg, BsDashLg, BsBook} from "react-icons/bs";
 
 //za CSS koristimo camelCase notaciju
 //interni CSS kao promenljiva
@@ -42,8 +42,10 @@ function Proizvod({product, onAdd, onDelete, inCart}){
       <div className="card-body">
           <h3 className="card-title">{product.title}</h3>
           <h6 className="card-text">⟡{product.category}</h6>
-          <h8 className="card-text">{product.size}</h8>
-          <p className="card-text">►{product.description}</p>
+          <p className="card-text">{product.size}</p>
+        
+          <p className="card-desc">►{product.description}</p>
+          <p className="card-text">{product.price}</p>
       </div>
       {/* <button className="btn" onClick={() => onAdd(product.title)}> */}
       
@@ -57,7 +59,7 @@ function Proizvod({product, onAdd, onDelete, inCart}){
           </button>
         </>
       ) : (
-      <h3>Amount: {product.amount}</h3>
+      <h3>Količina: {product.amount}</h3>
       
       )}
     </div>

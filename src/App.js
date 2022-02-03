@@ -29,6 +29,7 @@ function App() {
       size: "50 ml",
       description:
         "There’s a Bombshell in every woman. The heart of the fragrance blooms with Bombshell’s signature floral, the peony. Madagascan vanilla orchid adds a creamy sweetness.",
+      price: "60 €",
       amount: 0,
     },
     {
@@ -39,6 +40,7 @@ function App() {
       size: "250 ml",
       description:
         "Discover The Mist Collection. Scents that celebrate all that's individual, unique and of the moment. It's a fragrance adventure, and it starts with you.",
+      price: "20 €",
       amount: 0,
     },
     {
@@ -49,6 +51,7 @@ function App() {
       size: "236 ml",
       description:
         "Nourish with scent. Our fast-absorbing, fragrance lotion with 24-Hour Moisture is perfect for hands and body. Smooth on lotion, then finish with Mist for lasting scent.",
+        price: "25 €",
       amount: 0,
     },
   ]);
@@ -69,6 +72,8 @@ function addProduct(title, id){
     console.log(prod.amount);
   });
   refreshCart();
+
+  
 
   // products.map((prod) => {
   //   if(prod.id === id){
