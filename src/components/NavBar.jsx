@@ -9,7 +9,7 @@ function NavBar({cartNum}){
 
     return (
         <div className="navBar">
-            <Link to="/">My Store</Link>
+            <Link to="/">VICTORIA'S SECRET WEB-SHOP</Link>
             <Link to="/cart" className="cart-items">
                 <BsCartFill />
                 <p className="cart-num">{cartNum}</p>

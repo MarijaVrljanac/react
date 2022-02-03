@@ -23,6 +23,7 @@ function App() {
   const [products] = useState([
     {
       id: 1,
+      image: "https://static2.sabinacdn.com/9339-thickbox_default/bombshell.jpg",
       title: "Bombshell",
       category: "EDP",
       size: "50 ml",
@@ -32,6 +33,7 @@ function App() {
     },
     {
       id: 2,
+      image: "https://assets.goldenscent.com/catalog/product/cache/1/small_image/750x750/9df78eab33525d08d6e5fb8d27136e95/6/6/667538582035-victoria-secret-victoria_s-secret-vanilla-lace-body-mist-_u_-250-ml.jpg",
       title: "Vanilla Lace",
       category: "Mist",
       size: "250 ml",
@@ -41,6 +43,7 @@ function App() {
     },
     {
       id: 3,
+      image: "https://www.dambiro.de/media/image/product/27809/lg/victorias-secret-romantic-body-lotion-236-ml---8-fl-oz.jpg",
       title: "Romantic",
       category: "Losion",
       size: "236 ml",
