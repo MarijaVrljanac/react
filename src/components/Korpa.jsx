@@ -4,11 +4,18 @@ import Proizvod from "./Proizvod";
 const Korpa = ({products}) => {
     return (
       <div className="cart-container">
-          <h3><font color="white">Vaša korpa:</font></h3>
+          <div className="korpaDiv"><h3>Vaša korpa:</h3></div>
+          
           {products.map((prod)=> (
             <Proizvod product={prod} key={prod.id} inCart={0}/>
           ))}
+
+
+      <div className="cenaDiv"><h3>Ukupna cena proizvoda: {products.price}</h3>
+          </div>
       </div>
+
+      
     );
   };
 

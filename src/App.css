@@ -49,6 +49,7 @@
 .all-products {
   
   display: inline-flex;
+  flex-direction: row;
   margin: 20px;
 }
 
@@ -57,7 +58,10 @@
   border-width: 2px;
   border-color: rgb(211, 211, 211);
   border-radius: 10px;
-  max-width: 200px;
+  /* max-width: 200px; */
+  width: 205px;
+  /* height: 600px; */
+ 
 }
 
 .card-img-top {
@@ -101,6 +105,8 @@ a {
 
 .cart-container {
   margin: 20px;
+  
+  
 }
 
 .card-cart {
@@ -112,6 +118,7 @@ a {
   background-color: white;
   border-radius: 10px;
   max-width: 300px;
+  height: auto;
   text-align: center;
 }
 
@@ -131,4 +138,190 @@ a {
 .card-desc{
  
   font-style: oblique;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.sortbtnA{
+  background-color: #f9629f;
+ 
+}
+
+
+.sortbtnB{
+  background-color: #fc9bc2;
+  
+}
+
+
+
+
+.korpaDiv{
+  background-color: #fc9bc2;
+  /* max-width: 380px; */
+  width: 20%;
+  color:black;
+  /* margin: 10px 0;
+  height: 55px; */
+  border-radius: 55px;
+  /* display: grid; */
+  /* grid-template-columns: 15% 85%;
+  padding: 0 0.4rem; */
+  text-align: center;
+  margin-left: 40%;
+ 
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #f9629f;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #f9629f;
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: #f9629f;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #f9629f;
+  align-items: center;
+  
+}
+.cenaDiv{
+  background-color: #f9629f;
+  /* max-width: 380px; */
+  width: 20%;
+  color:black;
+  /* margin: 10px 0;
+  height: 55px; */
+  border-radius: 55px;
+  /* display: grid; */
+  /* grid-template-columns: 15% 85%;
+  padding: 0 0.4rem; */
+  text-align: center;
+  margin-left: 40%;
+ 
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #fc9bc2;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #fc9bc2;
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: #fc9bc2;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #fc9bc2;
+  align-items: center;
+  
+}
+
+
+ 
+#newsletter{
+  
+  display: flex;
+  flex-direction: column;
+  height: 88vh;
+}
+#container1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+ 
+}
+ 
+#newsletter-box{
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(90deg, 
+  rgb(249, 98, 159) 25%,rgb(252, 155, 194) 25%,rgb(252, 155, 194) 50%,  rgb(249, 98, 159) 50%,  rgb(249, 98, 159) 75%, rgb(252, 155, 194) 75%, rgb(252, 155, 194) 100%);
+  box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+
+  border-bottom-style: dashed;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+  border-top-style: dashed;
+  border-top-width: 2px;
+  border-top-color: black;
+  border-left-style: dashed;
+  border-left-width: 2px;
+  border-left-color: black;
+  border-right-style: dashed;
+  border-right-width: 2px;
+  border-right-color: black;
+
+}
+#left{
+  height: 100%;
+  background: url("https://inboxflows.com/media/emails/2-hours-2-deals-tonight-only-cropped-01ec2b0f.jpg") no-repeat;
+ 
+  background-size: cover;
+}
+#right{
+  padding: 25px 40px;
+}
+#right h2{
+  position:relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  color:black;
+}
+#right h2::after{
+  content: '';
+  position:absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width:50px;
+  border-radius:2px ;
+  background-color: black;
+}
+.field{
+  width: 100%;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background-color:  rgba(230, 230, 230, 0.6);
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  transition:.3s;
+}
+.field:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.field:focus{
+  background-color: #fff;
+  border:2px solid #f9629f;
+}
+.area{
+  min-height: 150px;
+}
+
+.nl{
+  color: black;
+}
+
+.btn{
+  color:black;
+  
+}
+ 
+@media screen and (max-width:880px) {
+  #contact-box{
+      grid-template-columns: 1fr;
+  }
+  #left{
+      height: 200px;
+  }
 }

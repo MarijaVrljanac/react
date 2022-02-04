@@ -12,7 +12,7 @@ import {BsPlusLg, BsDashLg, BsBook} from "react-icons/bs";
 // function Proizvod(props) {
 
 //DESTRUKTUIRANJE PROPS
-function Proizvod({product, onAdd, onDelete, inCart}){
+function Proizvod({product, onAdd, onDelete, sumPrice, inCart}){
 
 
     const stil = { margin: 1 + "em", borderStyle: "dotted" };
@@ -32,9 +32,21 @@ function Proizvod({product, onAdd, onDelete, inCart}){
     // src="https:/picsum.photos/200" alt="Slika"
 
 
+    
+
 
     return (
+
+      
+
+
+      
     <div className={inCart===1 ? "card" : "card-cart"} style={stil}>
+
+<div id="container">
+  
+</div>
+
       <img className={inCart===1 ? "card-img-top" : "card-img-left"}></img>   
       <div className="card-header" >
                  <img className='card-img-top'  src ={product.image}   /> 
@@ -43,12 +55,16 @@ function Proizvod({product, onAdd, onDelete, inCart}){
           <h3 className="card-title">{product.title}</h3>
           <h6 className="card-text">⟡{product.category}</h6>
           <p className="card-text">{product.size}</p>
-        
-          <p className="card-desc">►{product.description}</p>
+          {/* <button type="button" id="btnOpis" onclick="show()">Opis proizvoda...
+          <BsBook />
+          </button> */}
+          <p id="opis" className="card-text">{product.description}</p>
           <p className="card-text">{product.price}</p>
       </div>
       {/* <button className="btn" onClick={() => onAdd(product.title)}> */}
       
+     
+
       {inCart === 1 ? (
         <>
           <button className="btnAdd" onClick={() => onAdd(product.title, product.id)}>
@@ -57,13 +73,17 @@ function Proizvod({product, onAdd, onDelete, inCart}){
           <button className="btnDelete" onClick={() => onDelete(product.title, product.id)}>
             <BsDashLg />
           </button>
+        
+        
         </>
       ) : (
       <h3>Količina: {product.amount}</h3>
       
+      
       )}
     </div>
   );
+  
   
 }
 

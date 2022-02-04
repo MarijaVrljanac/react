@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from "./components/NavBar";
 import Proizvodi from "./components/Proizvodi";
 import Korpa from "./components/Korpa";
+import Newsletter from "./components/Newsletter";
 import { useState } from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom"; //Routes je kao switch(), Route je kao case
 
@@ -17,7 +18,6 @@ function App() {
 
   const [cartNum, setCartNum] = useState(0);
   const [cartProducts, setCartProducts] = useState([]);
-
 
 
   const [products] = useState([
@@ -54,12 +54,58 @@ function App() {
         price: "25 €",
       amount: 0,
     },
+    {
+      id: 4,
+      image: "https://i5.walmartimages.com/asr/f38e882a-7ba1-4aad-9d60-e9743c314985_1.ec606351874da67cbaf7bcfcfb6eebf1.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      title: "Angel",
+      category: "EDP",
+      size: "50 ml",
+      description:
+        "Nourish with scent. Our fast-absorbing, fragrance lotion with 24-Hour Moisture is perfect for hands and body. Smooth on lotion, then finish with Mist for lasting scent.",
+        price: "60 €",
+      amount: 0,
+    },
+    {
+      id: 5,
+      image: "https://static3.sabinacdn.com/7783-thickbox_default/aqua-kiss-body-mist.jpg",
+      title: "Aqua Kiss",
+      category: "Mist",
+      size: "250 ml",
+      description:
+        "Discover The Mist Collection. Scents that celebrate all that's individual, unique and of the moment. It's a fragrance adventure, and it starts with you.",
+      price: "20 €",
+      amount: 0,
+    },
+    {
+      id: 6,
+      image: "https://brandsfreaks.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-11-at-1.03.40-PM.jpeg",
+      title: "Love Spell",
+      category: "Losion",
+      size: "236 ml",
+      description:
+        "Nourish with scent. Our fast-absorbing, fragrance lotion with 24-Hour Moisture is perfect for hands and body. Smooth on lotion, then finish with Mist for lasting scent.",
+        price: "25 €",
+      amount: 0,
+    },
+    
   ]);
 
   function refreshCart(){
     let newProducts = products.filter((prod) => prod.amount > 0);
     setCartProducts(newProducts);
   }
+
+  // function opis() {
+  //   this.state = {
+  //     show: false
+  //   };
+  // }
+
+  // function show() {
+  //   this.setState({
+  //     show: true
+  //   });
+  // }
 
 function addProduct(title, id){
   console.log("Dodat je proizvod: "+title);
@@ -73,7 +119,7 @@ function addProduct(title, id){
   });
   refreshCart();
 
-  
+ 
 
   // products.map((prod) => {
   //   if(prod.id === id){
@@ -88,9 +134,34 @@ function deleteProduct(title, id){
   // console.log("Broj proizvoda u korpi: "+cartNum);
   products.forEach((prod) => {
     if(prod.id === id){
-      prod.amount--;
+      if(prod.amount >= 0){
+        prod.amount--;
+      }else{
+        return;
+      }
+
+      
     }
     console.log(prod.amount);
+  });
+  
+
+  refreshCart();
+}
+
+
+function sumPrice(id, price){
+  let sum = 0;
+
+  setCartNum(cartNum + 1);
+  // console.log("Broj proizvoda u korpi: "+cartNum);
+  products.forEach((prod) => {
+    if(prod.id === id){
+      prod.amount++;
+      sum += prod.price;
+    }
+    // console.log(prod.amount);
+    console.log(sum);
   });
   refreshCart();
 }
@@ -102,12 +173,13 @@ function deleteProduct(title, id){
         <Routes>
           <Route 
             path="/"
-            element={<Proizvodi products={products} onAdd={addProduct} onDelete={deleteProduct}/>}
+            element={<Proizvodi products={products} onAdd={addProduct} onDelete={deleteProduct} sumPrice={sumPrice}/>}
           />
           <Route 
             path="/cart" // /cart*prihvata sve putanje; konkretna putanja bi bila npr /cart/:id
             element={<Korpa products={cartProducts}/>}
           />
+           <Route path="/newsletter" element={<Newsletter></Newsletter>} />
         </Routes>
         
       </BrowserRouter>
