@@ -11,8 +11,9 @@ function Newsletter() {
                     </div>
                     <div id="right">
                         <h2 className="nl">Pretplatite se na naš Newsletter</h2>
-                        <input type="text" className='field' placeholder='Ime'/>
-                        <input type="email" className='field' placeholder='E-mail'/>
+                        <input type="text" className='field' placeholder='Ime' required/>
+                        <input type="email" className='field' placeholder='E-mail' required/>
+                        <input type="text" className='field' placeholder='Naslov'/>
                         <textarea className='field area' placeholder='Poruka'></textarea>
                         <button className='btn'>Submit</button>
                     </div>

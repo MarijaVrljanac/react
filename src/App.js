@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Proizvodi from "./components/Proizvodi";
 import Korpa from "./components/Korpa";
 import Newsletter from "./components/Newsletter";
+import Footer from "./components/Footer";
 import { useState } from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom"; //Routes je kao switch(), Route je kao case
 
@@ -18,6 +19,7 @@ function App() {
 
   const [cartNum, setCartNum] = useState(0);
   const [cartProducts, setCartProducts] = useState([]);
+  const [sum, setSumPrice] = useState(0); 
 
 
   const [products] = useState([
@@ -28,8 +30,8 @@ function App() {
       category: "EDP",
       size: "50 ml",
       description:
-        "There’s a Bombshell in every woman. The heart of the fragrance blooms with Bombshell’s signature floral, the peony. Madagascan vanilla orchid adds a creamy sweetness.",
-      price: "60 €",
+        "There’s a Bombshell in every woman. The heart of the fragrance blooms with peony. Madagascan vanilla orchid adds a creamy sweetness.",
+      price: 60,
       amount: 0,
     },
     {
@@ -39,8 +41,8 @@ function App() {
       category: "Mist",
       size: "250 ml",
       description:
-        "Discover The Mist Collection. Scents that celebrate all that's individual, unique and of the moment. It's a fragrance adventure, and it starts with you.",
-      price: "20 €",
+        "Discover The Mist Collection. Scents that celebrate all that's individual and of the moment. It's a fragrance adventure, and it starts with you.",
+      price: 20,
       amount: 0,
     },
     {
@@ -50,8 +52,8 @@ function App() {
       category: "Losion",
       size: "236 ml",
       description:
-        "Nourish with scent. Our fast-absorbing, fragrance lotion with 24-Hour Moisture is perfect for hands and body. Smooth on lotion, then finish with Mist for lasting scent.",
-        price: "25 €",
+        "Nourish with scent. Our fast-absorbing, fragrance lotion with 24-Hour Moisture is perfect for hands and body. Smooth on lotion, then finish with Mist.",
+        price: 25,
       amount: 0,
     },
     {
@@ -61,8 +63,8 @@ function App() {
       category: "EDP",
       size: "50 ml",
       description:
-        "Nourish with scent. Our fast-absorbing, fragrance lotion with 24-Hour Moisture is perfect for hands and body. Smooth on lotion, then finish with Mist for lasting scent.",
-        price: "60 €",
+        "The fragrance invites you to take the stage, steal the spotlight and to make every day runway-worthy. It is a blend of bergamot, gardenia and musk.",
+        price: 60,
       amount: 0,
     },
     {
@@ -72,8 +74,8 @@ function App() {
       category: "Mist",
       size: "250 ml",
       description:
-        "Discover The Mist Collection. Scents that celebrate all that's individual, unique and of the moment. It's a fragrance adventure, and it starts with you.",
-      price: "20 €",
+        "Discover The Mist Collection. Scents that celebrate all that's individual and of the moment. It's a fragrance adventure, and it starts with you.",
+      price: 20,
       amount: 0,
     },
     {
@@ -83,8 +85,8 @@ function App() {
       category: "Losion",
       size: "236 ml",
       description:
-        "Nourish with scent. Our fast-absorbing, fragrance lotion with 24-Hour Moisture is perfect for hands and body. Smooth on lotion, then finish with Mist for lasting scent.",
-        price: "25 €",
+        "Nourish with scent. Our fast-absorbing, fragrance lotion with 24-Hour Moisture is perfect for hands and body. Smooth on lotion, then finish with Mist.",
+        price: 25,
       amount: 0,
     },
     
@@ -107,18 +109,24 @@ function App() {
   //   });
   // }
 
+
+
+
 function addProduct(title, id){
-  console.log("Dodat je proizvod: "+title);
+  // console.log("Dodat je proizvod: "+title);
   setCartNum(cartNum + 1);
   // console.log("Broj proizvoda u korpi: "+cartNum);
   products.forEach((prod) => {
     if(prod.id === id){
       prod.amount++;
+      setSumPrice(sum+prod.price);
+      console.log(sum);
     }
-    console.log(prod.amount);
+    refreshCart();
+    // console.log(prod.amount);
   });
+  
   refreshCart();
-
  
 
   // products.map((prod) => {
@@ -129,42 +137,47 @@ function addProduct(title, id){
 }
 
 function deleteProduct(title, id){
-  console.log("Proizvod: "+title+" je uklonjen iz korpe.");
+  
   setCartNum(cartNum - 1);
   // console.log("Broj proizvoda u korpi: "+cartNum);
   products.forEach((prod) => {
     if(prod.id === id){
-      if(prod.amount >= 0){
-        prod.amount--;
-      }else{
+      if(prod.amount === 0){
         return;
+      }else{
+        prod.amount--;
       }
-
-      
-    }
-    console.log(prod.amount);
-  });
-  
-
-  refreshCart();
-}
-
-
-function sumPrice(id, price){
-  let sum = 0;
-
-  setCartNum(cartNum + 1);
-  // console.log("Broj proizvoda u korpi: "+cartNum);
-  products.forEach((prod) => {
-    if(prod.id === id){
-      prod.amount++;
-      sum += prod.price;
     }
     // console.log(prod.amount);
-    console.log(sum);
   });
+  // console.log("Proizvod: "+title+" je uklonjen iz korpe.");
   refreshCart();
 }
+
+
+// function sumPrice(id, price){
+
+  
+//   setCartNum(cartNum + 1);
+//   setSumPrice(sum + 1);
+//   // console.log("Broj proizvoda u korpi: "+cartNum);
+//   products.forEach((prod) => {
+//     if(prod.id === id){
+//       prod.amount++;
+//       sum += prod.price;
+//     }
+//     // console.log(prod.amount);
+//     console.log(sum);
+//   });
+//   refreshCart();
+// }
+
+
+
+
+
+
+
 
 
   return (
@@ -173,15 +186,15 @@ function sumPrice(id, price){
         <Routes>
           <Route 
             path="/"
-            element={<Proizvodi products={products} onAdd={addProduct} onDelete={deleteProduct} sumPrice={sumPrice}/>}
+            element={<Proizvodi products={products} onAdd={addProduct} onDelete={deleteProduct}/>}
           />
           <Route 
             path="/cart" // /cart*prihvata sve putanje; konkretna putanja bi bila npr /cart/:id
-            element={<Korpa products={cartProducts}/>}
+            element={<Korpa products={cartProducts} sum={sum}/>}
           />
            <Route path="/newsletter" element={<Newsletter></Newsletter>} />
         </Routes>
-        
+        <Footer></Footer>
       </BrowserRouter>
   );     
 }

@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Proizvod from "./Proizvod.jsx";
 
-const Proizvodi = ({products, onAdd, sumPrice, onDelete}) => {
+const Proizvodi = ({products, onAdd, onDelete}) => {
     // const name="Naziv proizvoda";
     // const desc = "Opis proizvoda";
     // const prod = {
@@ -48,7 +48,7 @@ const Proizvodi = ({products, onAdd, sumPrice, onDelete}) => {
                   .sort((a, b) => a.price < b.price ? -1 : 1)
                   .map((prod) => (
     
-                    <Proizvod product={prod} key={prod.id} onAdd={onAdd} inCart={1} onDelete={onDelete} sumPrice={sumPrice}/>
+                    <Proizvod product={prod} key={prod.id} onAdd={onAdd} inCart={1} onDelete={onDelete}/>
                   
              ))}
                 </>
@@ -59,7 +59,7 @@ const Proizvodi = ({products, onAdd, sumPrice, onDelete}) => {
                   .sort((a, b) => a.price < b.price ?  1 : -1)
                   .map((prod) => (
     
-                    <Proizvod product={prod} key={prod.id} onAdd={onAdd} onDelete={onDelete} sumPrice={sumPrice} inCart={1}/>
+                    <Proizvod product={prod} key={prod.id} onAdd={onAdd} onDelete={onDelete} inCart={1}/>
                   
                   ))}
                 </>

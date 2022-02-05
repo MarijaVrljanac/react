@@ -51,6 +51,8 @@
   display: inline-flex;
   flex-direction: row;
   margin: 20px;
+  align-items: center
+
 }
 
 .card {
@@ -97,6 +99,14 @@
   border-width: 0px;
 }
 
+.btnAdd:hover{
+  background-color: antiquewhite;
+}
+.btnDelete:hover{
+  background-color: antiquewhite;
+}
+
+
 a {
   color: black;
   text-decoration: none;
@@ -104,8 +114,9 @@ a {
 }
 
 .cart-container {
-  margin: 20px;
-  
+  margin-top: 10px;
+  margin-left: 90px;
+  margin-bottom: 10px;
   
 }
 
@@ -157,7 +168,30 @@ a {
   
 }
 
+.sortbtnA:hover{
+  /* background-color: #f9629f; */
+  color: white;
 
+}
+.sortbtnB:hover{
+  /* background-color: #f9629f; */
+  color: white;
+
+}
+.ws:hover{
+  /* background-color: #f9629f; */
+  color: white;
+
+}
+.cart-num:hover, .cart-items:hover{
+  /* background-color: #f9629f; */
+  color: white;
+
+}
+
+.footerlink:hover{
+  color: white;
+}
 
 
 .korpaDiv{
@@ -312,10 +346,10 @@ a {
   color: black;
 }
 
-.btn{
-  color:black;
-  
-}
+
+
+
+
  
 @media screen and (max-width:880px) {
   #contact-box{
@@ -324,4 +358,81 @@ a {
   #left{
       height: 200px;
   }
+}
+
+
+/*za futer*/
+.footer {
+  background-image: linear-gradient(90deg, 
+  rgb(249, 98, 159) 25%,rgb(252, 155, 194) 25%,rgb(252, 155, 194) 50%,  rgb(249, 98, 159) 50%,  rgb(249, 98, 159) 75%, rgb(252, 155, 194) 75%, rgb(252, 155, 194) 100%);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: black;
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: black;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: black;
+  align-items: center;
+  
+  
+}
+
+.footer > div {
+  background-image: linear-gradient(90deg, 
+  rgb(249, 98, 159) 25%,rgb(252, 155, 194) 25%,rgb(252, 155, 194) 50%,  rgb(249, 98, 159) 50%,  rgb(249, 98, 159) 75%, rgb(252, 155, 194) 75%, rgb(252, 155, 194) 100%);
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  text-align: center;
+  min-height: 40px;
+  position: -webkit-sticky;
+}
+.footer ul{
+  list-style-type: none;
+}
+.footer a{
+  text-decoration: none;
+  color:black;
+
+}
+ 
+.btn {
+  background-color: transparent;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 3px;
+  border-radius: 3px;
+  border-width: 0px;
+}
+
+.btn:hover{
+  /* background-color: #f9629f; */
+  color: white;
+
+
+}
+
+
+@media (max-width: 800px) {
+  
+
+  /*Responzivnost za futer*/
+ 
+  /*pogledaj kako su podeseni divovi u futeru*/
+  .footer > div { 
+    grid-column: span 3;
+  }
+
+  
+  
+  
 }

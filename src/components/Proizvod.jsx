@@ -12,7 +12,7 @@ import {BsPlusLg, BsDashLg, BsBook} from "react-icons/bs";
 // function Proizvod(props) {
 
 //DESTRUKTUIRANJE PROPS
-function Proizvod({product, onAdd, onDelete, sumPrice, inCart}){
+function Proizvod({product, onAdd, onDelete, inCart}){
 
 
     const stil = { margin: 1 + "em", borderStyle: "dotted" };
@@ -59,11 +59,11 @@ function Proizvod({product, onAdd, onDelete, sumPrice, inCart}){
           <BsBook />
           </button> */}
           <p id="opis" className="card-text">{product.description}</p>
-          <p className="card-text">{product.price}</p>
+          <p className="card-text">{product.price} €</p>
       </div>
       {/* <button className="btn" onClick={() => onAdd(product.title)}> */}
       
-     
+    
 
       {inCart === 1 ? (
         <>

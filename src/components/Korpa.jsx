@@ -1,7 +1,7 @@
 import React from "react";
 import Proizvod from "./Proizvod";
 
-const Korpa = ({products}) => {
+const Korpa = ({products, sum}) => {
     return (
       <div className="cart-container">
           <div className="korpaDiv"><h3>Vaša korpa:</h3></div>
@@ -11,7 +11,7 @@ const Korpa = ({products}) => {
           ))}
 
 
-      <div className="cenaDiv"><h3>Ukupna cena proizvoda: {products.price}</h3>
+      <div className="cenaDiv"><h3>Ukupna cena proizvoda: {sum} €</h3>
           </div>
       </div>
 
