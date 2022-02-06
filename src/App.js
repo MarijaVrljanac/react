@@ -146,6 +146,7 @@ function deleteProduct(title, id){
         return;
       }else{
         prod.amount--;
+        setSumPrice(sum-prod.price);
       }
     }
     // console.log(prod.amount);
